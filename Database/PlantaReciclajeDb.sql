@@ -3,7 +3,7 @@ use PlantaReciclajeDB;
 
 create table Materiales(
     idMaterial int primary key auto_increment,
-    tipoMaterial enum('Plastico', 'Vidrio', 'Metal', 'Papel', 'Carton') not null,
+    tipoMaterial varchar(50) not null,
     precioPorKg decimal(10,2) not null,
     constraint PK_Materiales primary key (idMaterial)
 );
