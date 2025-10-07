@@ -6,16 +6,16 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "materiales")
+@Table(name = "Materiales")
 @Data
 public class MaterialEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idMaterial;
-    @Column(length = 150, unique = true, nullable = false)
+    private Long idMaterial;
+    @Column(length = 150, nullable = false, unique = true)
     private String tipoMaterial;
-    @Column(precision = 2, scale = 10)
+    @Column(precision = 10, scale = 2)
     private BigDecimal precioPorKg;
 
 }
