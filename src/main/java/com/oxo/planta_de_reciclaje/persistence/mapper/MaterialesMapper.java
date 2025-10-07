@@ -1,20 +1,23 @@
 package com.oxo.planta_de_reciclaje.persistence.mapper;
 
-import com.oxo.planta_de_reciclaje.dominio.dto.MaterialDto;
-import com.oxo.planta_de_reciclaje.persistence.entity.MaterialesEntity;
-import org.mapstruct.*;
+import com.oxo.planta_de_reciclaje.dominio.dto.MaterialesDto;
+import com.oxo.planta_de_reciclaje.dominio.dto.ModMaterialesDto;
+import com.oxo.planta_de_reciclaje.persistence.entity.Materiales;
+import org.mapstruct.InheritInverseConfiguration;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
-//@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring")
 public interface MaterialesMapper {
 
-    MaterialDto toDto(MaterialesEntity materiales);
-    List<MaterialDto> toDto(List<MaterialesEntity> alumnos);
+    MaterialesDto toDto(Materiales material);
+    List<MaterialesDto> toDto(List<Materiales> materiales);
 
     @InheritInverseConfiguration
-    //@Mapping(source = "tipoMaterial", ignore = "true")
-    //@Mapping(source = "precioPorKg", ignore = "true")
-    MaterialesEntity toEntity(MaterialDto materialDto);
+    Materiales toEntity(MaterialesDto materialesDto);
 
+    @Mapping(target = "idMaterial", ignore = true)
+    Materiales toEntity(ModMaterialesDto modMaterialesDto);
 }

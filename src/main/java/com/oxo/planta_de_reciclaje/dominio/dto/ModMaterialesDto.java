@@ -6,9 +6,7 @@ import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
 import java.math.BigDecimal;
 
-public record MaterialesDto(
-        Integer idMaterial,
-
+public record ModMaterialesDto(
         @NotBlank(message = "El tipo de material es obligatorio")
         @Size(max = 50, message = "El tipo de material no puede exceder los 50 caracteres")
         String tipoMaterial,
