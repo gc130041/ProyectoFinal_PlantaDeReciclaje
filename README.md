@@ -5,11 +5,13 @@ Este proyecto consiste en la funcionalidad de una pequeña máquina que acepta e
 --------------------------------------------------------------------------------------------------------------------
 
 FUNCIONALIDAD
+
 La funcionalidad del proyecto consiste en que los usuarios realizan entregas y los administradores gestionan los datos, los usuarios no necesitan registrarse y solamente pueden entregar un tipo de material por cada entrega y los administradores manejan los datos, estos pueden modificar y agregar materiales, esto para modificar su valor en base a la demanda o agregar materiales que se han vuelto significativos para el reciclaje y pueden modificar el nombre del proveedor de las entregas
 
 --------------------------------------------------------------------------------------------------------------------
 
 TECNOLOGÍAS
+
 El proyecto consiste meramente de backend y funciona con la tecnología Springboot, para hacerle funcionar se necesita de Postman y las solicitudes correspondientes
 
 -GET
