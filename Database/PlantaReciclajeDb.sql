@@ -26,14 +26,3 @@ create table Entregas(
     constraint PK_Entregas primary key (idEntrega),
     constraint FK_Entregas_Materiales foreign key (idMaterial) references Materiales(idMaterial)
 );
-
-create table CookieAuth (
-    id int auto_increment primary key,
-    selector varchar(255) unique not null,
-    token_hash varchar(255) not null,
-    idAdministrador int not null,
-    fechaExpiracion datetime not null,
-    constraint FK_CookieAuth_Admin
-        foreign key (idAdministrador) references Administradores(idAdministrador)
-        on delete cascade
-);
