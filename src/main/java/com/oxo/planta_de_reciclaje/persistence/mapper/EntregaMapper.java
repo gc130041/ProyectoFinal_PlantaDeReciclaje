@@ -17,7 +17,8 @@ public interface EntregaMapper {
     List<EntregaDto> toDto(List<Entrega> entrega);
 
     @InheritInverseConfiguration
-    @Mapping(target = "material", ignore = true)
+    //@Mapping(target = "material", ignore = true)
+    @Mapping(source = "idMaterial", target = "material.idMaterial")
     Entrega toEntity(EntregaDto dto);
 
 }

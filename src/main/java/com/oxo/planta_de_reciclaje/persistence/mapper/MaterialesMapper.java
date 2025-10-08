@@ -16,8 +16,7 @@ public interface MaterialesMapper {
     List<MaterialesDto> toDto(List<Materiales> materiales);
 
     @InheritInverseConfiguration
+    @Mapping(target = "idMaterial", ignore = true)
     Materiales toEntity(MaterialesDto materialesDto);
 
-    @Mapping(target = "idMaterial", ignore = true)
-    Materiales toEntity(ModMaterialesDto modMaterialesDto);
 }
