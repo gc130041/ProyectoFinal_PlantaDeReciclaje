@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -20,7 +21,7 @@ public class Entrega {
 
     @CreationTimestamp
     @Column(nullable = false, updatable = false)
-    private LocalDateTime fechaEntrega;
+    private LocalDate fechaEntrega;
 
     @Column(nullable = false, length = 64)
     private String nombreProveedor;

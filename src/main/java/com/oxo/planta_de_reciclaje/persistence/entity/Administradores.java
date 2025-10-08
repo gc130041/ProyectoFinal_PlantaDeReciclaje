@@ -1,7 +1,9 @@
 package com.oxo.planta_de_reciclaje.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "Administradores")
 public class Administradores {
@@ -19,36 +21,4 @@ public class Administradores {
 
     @Column(name = "contrasena", nullable = false, length = 100)
     private String contrasena;
-
-    public Integer getIdAdministrador() {
-        return idAdministrador;
-    }
-
-    public void setIdAdministrador(Integer idAdministrador) {
-        this.idAdministrador = idAdministrador;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public void setCorreoElectronico(String correoElectronico) {
-        this.correoElectronico = correoElectronico;
-    }
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
 }
