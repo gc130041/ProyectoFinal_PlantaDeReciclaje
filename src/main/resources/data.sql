@@ -41,3 +41,15 @@ VALUES (45.50, NOW(), 'Recicladora El Progreso', 5.46, 1),    -- carton
        (3.20, NOW(), 'Recitex GT', 33.28, 18),                -- telaPoliester
        (1.80, NOW(), 'Fibras Naturales', 18.90, 19),          -- telaLana
        (0.75, NOW(), 'Sedas Premium', 22.50, 20); -- seda
+
+INSERT INTO Administradores (nombre, correo_electronico, contrasena)
+VALUES ('Juan Pérez', 'juan.perez@email.com', 'hash_contrasena_1'),
+       ('Ana López', 'ana.lopez@email.com', 'hash_contrasena_2'),
+       ('Carlos García', 'carlos.garcia@email.com', 'hash_contrasena_3'),
+       ('María Hernández', 'maria.hernandez@email.com', 'hash_contrasena_4'),
+       ('José Martínez', 'jose.martinez@email.com', 'hash_contrasena_5'),
+       ('Laura Sánchez', 'laura.sanchez@email.com', 'hash_contrasena_6'),
+       ('David González', 'david.gonzalez@email.com', 'hash_contrasena_7'),
+       ('Sofía Rodríguez', 'sofia.rodriguez@email.com', 'hash_contrasena_8'),
+       ('Miguel Fernández', 'miguel.fernandez@email.com', 'hash_contrasena_9'),
+       ('Lucía Díaz', 'lucia.diaz@email.com', 'hash_contrasena_10');
