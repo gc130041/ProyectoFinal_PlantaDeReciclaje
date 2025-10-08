@@ -10,10 +10,12 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -69,5 +71,28 @@ public class EntregaController {
     public ResponseEntity<Void> eliminar(@Parameter(description = "ID de la entrega a eliminar.", example = "1") @PathVariable Integer id) {
         service.eliminarEntrega(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/reporte")
+    @Operation(summary = "Generar un reporte de entregas", description = "Genera un reporte diario o semanal de entregas basado en una fecha.")
+    @ApiResponse(responseCode = "200", description = "Reporte generado con éxito.")
+    @ApiResponse(responseCode = "400", description = "Parámetros inválidos.", content = @Content)
+    public ResponseEntity<List<EntregaDto>> generarReporte(
+            @Parameter(description = "Fecha para el reporte (formato YYYY-MM-DD).", example = "2025-10-08")
+            @RequestParam("fecha") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate fecha,
+
+            @Parameter(description = "Tipo de reporte ('diario' o 'semanal').", example = "diario")
+            @RequestParam("tipo") String tipo) {
+
+        List<EntregaDto> reporte;
+        if ("diario".equalsIgnoreCase(tipo)) {
+            reporte = service.generarReporteDiario(fecha);
+        } else if ("semanal".equalsIgnoreCase(tipo)) {
+            reporte = service.generarReporteSemanal(fecha);
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
+
+        return ResponseEntity.ok(reporte);
     }
 }
